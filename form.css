@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+#resume {
+    display: block;
+    padding: 4%;
+}
+
+#head2 {
+    font-size: 30px;
+    padding: 4% 0%;
+}
+
+#forms {
+    border: 2px dashed rgb(247, 148, 164);
+}
+
+#forms h2 {
+    font-size: 20px;
+    padding: 2% 0%;
+}
+
+#forms label {
+    font-size: 15px;
+    gap: 5%;
+}
+
+#forms input {
+    border-style: solid;
+    font-size: 18px;
+}
+
+#forms button {
+    padding: 10px 25px;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: yellow;
+}
+
+#forms a {
+    margin: 80%;
+}
