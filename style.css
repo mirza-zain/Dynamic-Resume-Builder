@@ -8,8 +8,9 @@ body {
     width: 100vw;
     height: 100vh;
     font-family: 'Poppins', sans-serif;
-    background-color: #b8b3b3;
+    background-color: bisque;
     scroll-behavior: smooth;
+    overflow-y: hidden;
 
 }
 
@@ -19,7 +20,6 @@ body::-webkit-scrollbar {
 
 #head {
     padding: 5%;
-    background-color: bisque;
     display: flex;
 }
 
@@ -55,4 +55,22 @@ body::-webkit-scrollbar {
     height: 90%;
     object-fit: cover;
     margin-left: 20%;
+}
+
+@media (max-width: 900px){
+    #head {
+        flex-direction: column;
+    }
+    #left {
+        width: 100%;
+        padding: 5%;
+    }
+    #right {
+        width: 100%;
+    }
+    #right img{
+        width: 90%;
+        height: 90%;
+        margin: 0% 5%;
+    }
 }
