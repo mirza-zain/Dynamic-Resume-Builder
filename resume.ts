@@ -1,6 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     const resumeContent = document.getElementById('conainer');
     const downloadButton = document.getElementById('downloadPdf');
+    const generateLinkButton = document.getElementById('generateLink');
+    const shareableLink = document.getElementById('shareableLink');
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    const data = urlParams.get('resumeData') || localStorage.getItem('resumeData');
+    console.log('Data retrieved:', data); // Log the retrieved data
+
 
     if (resumeContent) {
         const data = localStorage.getItem('resumeData');
@@ -73,5 +80,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     } else {
         console.error('Download button not found');
+    }
+
+    if (generateLinkButton) {
+        generateLinkButton.addEventListener('click', () => {
+            if (data) {
+                const encodedData = encodeURIComponent(data);
+                const uniqueLink = `${window.location.origin}${window.location.pathname}?resumeData=${encodedData}`;
+                if (shareableLink) {
+                    shareableLink.textContent = uniqueLink;
+                    shareableLink.style.display = 'block';
+                }
+            } else {
+                console.error('No resume data found to generate link');
+            }
+        });
+    } else {
+        console.error('Generate link button not found');
     }
 });
